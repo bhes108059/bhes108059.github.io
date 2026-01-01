@@ -1,6 +1,7 @@
 import { Heart, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);
@@ -24,13 +25,15 @@ export default function Header() {
           </span>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
-          <button className="text-sm font-medium hover-elevate px-4 py-2 rounded-full transition-all" data-testid="link-gallery">
-            Gallery
-          </button>
-        </nav>
-
         <div className="flex items-center gap-2">
+          <nav className="hidden md:flex items-center gap-4">
+            <Link href="/" className="text-sm font-medium hover-elevate px-4 py-2 rounded-full transition-all" data-testid="link-gallery">
+              畫廊
+            </Link>
+            <Link href="/diaries" className="text-sm font-medium hover-elevate px-4 py-2 rounded-full transition-all" data-testid="link-diaries">
+              日記
+            </Link>
+          </nav>
           <Button
             size="icon"
             variant="ghost"
