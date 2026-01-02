@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Upload, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 import heroImage from "@assets/generated_images/Hero_background_illustration_0df6aade.png";
 
 export default function Hero() {
@@ -32,10 +32,6 @@ export default function Hero() {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="rounded-full text-base px-8 py-6" data-testid="button-hero-upload">
-            <Upload className="h-5 w-5 mr-2" />
-            開始上傳
-          </Button>
           <Button size="lg" variant="outline" className="rounded-full text-base px-8 py-6 backdrop-blur-md bg-background/50" data-testid="button-hero-explore">
             探索畫廊
           </Button>

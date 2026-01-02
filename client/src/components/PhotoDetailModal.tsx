@@ -3,6 +3,7 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
+  DialogDescription,
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -52,6 +53,9 @@ export default function PhotoDetailModal({
               <DialogTitle className="text-2xl font-bold" data-testid="text-modal-title">
                 {photo.title}
               </DialogTitle>
+              <DialogDescription className="sr-only">
+                {photo.description || "照片詳情"}
+              </DialogDescription>
             </DialogHeader>
 
             {photo.description && (

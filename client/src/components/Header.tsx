@@ -1,6 +1,7 @@
-import { Heart, Upload, Moon, Sun } from "lucide-react";
+import { Heart, Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { Link } from "wouter";
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);
@@ -24,16 +25,15 @@ export default function Header() {
           </span>
         </div>
 
-        <nav className="hidden md:flex items-center gap-6">
-          <button className="text-sm font-medium hover-elevate px-4 py-2 rounded-full transition-all" data-testid="link-gallery">
-            Gallery
-          </button>
-          <button className="text-sm font-medium hover-elevate px-4 py-2 rounded-full transition-all" data-testid="link-upload">
-            Upload
-          </button>
-        </nav>
-
         <div className="flex items-center gap-2">
+          <nav className="hidden md:flex items-center gap-4">
+            <Link href="/" className="text-sm font-medium hover-elevate px-4 py-2 rounded-full transition-all" data-testid="link-gallery">
+              畫廊
+            </Link>
+            <Link href="/diaries" className="text-sm font-medium hover-elevate px-4 py-2 rounded-full transition-all" data-testid="link-diaries">
+              日記
+            </Link>
+          </nav>
           <Button
             size="icon"
             variant="ghost"
@@ -42,10 +42,6 @@ export default function Header() {
             data-testid="button-theme-toggle"
           >
             {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-          </Button>
-          <Button size="default" className="rounded-full hidden md:flex" data-testid="button-upload">
-            <Upload className="h-4 w-4 mr-2" />
-            Upload
           </Button>
         </div>
       </div>

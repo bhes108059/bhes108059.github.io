@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import PhotoGrid from "@/components/PhotoGrid";
-import UploadArea from "@/components/UploadArea";
 import PhotoDetailModal from "@/components/PhotoDetailModal";
 import { useState } from "react";
 import sample1 from '@assets/generated_images/Sample_photo_1_2e135f2a.png';
@@ -81,16 +80,12 @@ export default function Home() {
     }
   };
 
-  const handleFileSelect = (file: File) => {
-    console.log('File selected for upload:', file.name);
-  };
 
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
       <PhotoGrid photos={mockPhotos} onPhotoClick={handlePhotoClick} />
-      <UploadArea onFileSelect={handleFileSelect} />
       
       <PhotoDetailModal
         open={isModalOpen}
